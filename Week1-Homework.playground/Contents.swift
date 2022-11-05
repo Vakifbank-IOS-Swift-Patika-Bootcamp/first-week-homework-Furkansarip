@@ -18,7 +18,7 @@ palindromeChecker(to: value)
 print("\nQuestion 2 Answer")
 print("-------------------")
 //Question 2
-let items = [1,1,1,2,3,2,3,1]
+let items = ["a","a","b","b","c","c","c","c","a"]
 struct T : Hashable {
 
 }
@@ -50,11 +50,11 @@ func createPyramid(pow : Int){
 
 createPyramid(pow: 4)
 
-print("\nQuestion 4 Answer")
+print("Question 4 Answer")
 print("-------------------")
 
 var pyramidValue = String()
-func createAnPyramid(pow : Int){
+func pyramid(pow : Int){
     var spacerCount = pow
     var symbolCount = 0
     for _ in 1...pow {
@@ -75,5 +75,12 @@ func createAnPyramid(pow : Int){
     print(pyramidValue)
 }
 
-createAnPyramid(pow: 4)
+pyramid(pow: 3)
+
+
+
+
+ 
+  
+
 
