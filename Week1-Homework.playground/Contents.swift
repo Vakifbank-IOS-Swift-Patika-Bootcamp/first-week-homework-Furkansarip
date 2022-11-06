@@ -4,26 +4,33 @@ import Foundation
 //Question 1
 print("Question 1 Answer")
 print("-------------------")
-let value = "tet"
+var value = "Kesti geveze, tez eve gitsek"
+
+let characterSet = CharacterSet(charactersIn: "!'^+%&/()=?*,. ")
+let newValue = value.components(separatedBy: characterSet).joined()
+var newVal = newValue.lowercased()
 func palindromeChecker(to value : String){
+    
     if value == String(value.reversed()){
-        print("This is a palindrome string.")
+        print("\(value) is palindrome")
     }
     else {
-        print("This is not a palindrome!")
+        print("\(value) not palindrome")
     }
 }
 
-palindromeChecker(to: value)
+palindromeChecker(to: newVal)
+
 print("\nQuestion 2 Answer")
 print("-------------------")
 //Question 2
-let items = ["a","a","b","b","c","c","c","c","a"]
+let items : [Any] = ["a","a","b","b","c","c","c","c","a",1,2,3,2,2,4.0,4.0,true,true,false,false]
 struct T : Hashable {
 
 }
-func calculator<T>(datas : [T]) -> [T:Int]{
-let mapDatas = datas.map{($0,1)}
+func calculator<T:Any>(datas : [T]) -> [String:Int]{
+let mapString = items.map{ String(describing: $0)}
+let mapDatas = mapString.map{($0,1)}
 let counts = Dictionary(mapDatas, uniquingKeysWith: +)
 return counts
 }
